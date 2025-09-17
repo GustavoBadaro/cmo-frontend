@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "./variables.css";
+
+:focus-visible {
+  outline: 0;
+}
+
+* {
+  font-family: var(--font-outfit), Helvetica, sans-serif;
+}
+
+body {
+  color: black;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  @apply transition-colors cursor-pointer;
+}
+
+ul {
+  list-style: none;
+}
