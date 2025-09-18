@@ -13,17 +13,17 @@ interface Props
 const button = cva(
   [
     "centralize gap-2 whitespace-nowrap text-sm text-center font-medium",
-    "w-fit rounded-full transition-[color,background,border,filter]",
+    "w-fit h-fit rounded-full transition-[color,background,border,filter]",
   ],
   {
     variants: {
       variant: {
         default: [
-          "px-6 bg-[#00375A] text-white",
+          "bg-[#00375A] text-white",
           "[&:not(:disabled)]:hover:bg-secondary-400",
         ],
         secondary: [
-          "px-6 bg-secondary-500 text-white",
+          "bg-secondary-500 text-white",
           "[&:not(:disabled)]:hover:bg-secondary-400",
         ],
         outline: [
@@ -31,10 +31,19 @@ const button = cva(
           "[&:not(:disabled)]:hover:border-secondary-400",
           "[&:not(:disabled)]:hover:text-secondary-400",
         ],
+        support: [
+          "bg-[#6D94E9] text-white",
+          "[&:not(:disabled)]:hover:bg-secondary-400",
+        ],
+        "support-outline": [
+          "bg-transparent border border-[#6D94E9] text-[#6D94E9]",
+          "[&:not(:disabled)]:hover:border-secondary-400",
+          "[&:not(:disabled)]:hover:text-secondary-400",
+        ],
       },
       size: {
-        sm: ["py-2.5"],
-        md: ["py-3.5"],
+        sm: ["px-6 py-2.5"],
+        md: ["px-6 py-3.5"],
       },
     },
     defaultVariants: {

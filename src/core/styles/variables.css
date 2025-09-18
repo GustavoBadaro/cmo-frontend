@@ -9,7 +9,7 @@
   --secondary-100: #ffefe0;
   --secondary-200: #ffd3ad;
   --secondary-400: #ff9d47;
-  --secondary-500: #f5821e;
+  --secondary-500: #f58220;
   --secondary-600: #d6711a;
   --secondary-700: #b25e16;
   --secondary-800: #8f4b12;
@@ -20,4 +20,6 @@
   --neutral-500: #777880;
   --neutral-600: #47484d;
   --neutral-700: #313235;
+  --brand-blue: #00375a;
+  --support-gray: #666666;
 }
