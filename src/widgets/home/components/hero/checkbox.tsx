@@ -21,7 +21,9 @@ export function CheckboxHeroHome({ label, icon, ...props }: Props) {
         ])}
       >
         {icon && <span>{icon}</span>}
-        <strong className="text-sm font-medium">{label}</strong>
+        <strong className="text-sm font-medium text-neutral-500">
+          {label}
+        </strong>
       </div>
     </label>
   );

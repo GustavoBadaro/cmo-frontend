@@ -1,7 +1,12 @@
+import { ComponentSimpleCTA } from "@/core/types/strapi";
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 
-export function Simulate() {
+interface Props {
+  data: ComponentSimpleCTA;
+}
+
+export function SimpleCTA({ data }: Props) {
   return (
     <section className="w-full bg-white py-10">
       <div className="layout">
@@ -13,14 +18,23 @@ export function Simulate() {
         >
           <div className="flex-1 flex flex-col gap-2 max-md:gap-3">
             <h2 className="text-2xl tracking-wide font-semibold max-md:text-xl">
-              Simule seu financiamento
+              {data.title}
             </h2>
-            <p className="text-xl leading-none opacity-70 max-md:text-base">
-              Nós estamos com você em cada etapa da realização do seu sonho
-            </p>
+
+            {data.description && (
+              <p className="text-xl leading-none opacity-70 max-md:text-base">
+                {data.description}
+              </p>
+            )}
           </div>
 
-          <Button className="max-md:w-full">Simule agora</Button>
+          <Button
+            href={data.button.url}
+            target={data.button.target}
+            className="max-md:w-full"
+          >
+            {data.button.label}
+          </Button>
         </div>
       </div>
     </section>

@@ -1,16 +1,20 @@
 import { ContactForm } from "@/shared/components/contact-form";
-import { Simulate } from "@/shared/components/simulate";
-import { FeaturedProjectHome } from "@/widgets/home/components/featured-project";
+import { DisplayHome } from "@/widgets/home/components/display";
 import { HeroHome } from "@/widgets/home/components/hero";
+import { getHome } from "@/widgets/home/services/get-home";
 
-export default function Home() {
+export default async function Home() {
+  const home = await getHome();
+
+  if (!home) {
+    return <>Error 500</>;
+  }
+
   return (
     <>
-      <HeroHome />
+      <HeroHome image={home.data.image_main} />
       <ContactForm />
-      <FeaturedProjectHome />
-      <FeaturedProjectHome reverse />
-      <Simulate />
+      <DisplayHome components={home.data.components} />
     </>
   );
 }
