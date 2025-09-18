@@ -1,3 +1,4 @@
+import { CarouselProjects } from "@/shared/components/@project/carousel";
 import { ContactForm } from "@/shared/components/contact-form";
 import { DisplayHome } from "@/widgets/home/components/display";
 import { HeroHome } from "@/widgets/home/components/hero";
@@ -14,6 +15,7 @@ export default async function Home() {
     <>
       <HeroHome image={home.data.image_main} />
       <ContactForm />
+      <CarouselProjects />
       <DisplayHome components={home.data.components} />
     </>
   );

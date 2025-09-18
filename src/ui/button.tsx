@@ -42,7 +42,7 @@ const button = cva(
         ],
       },
       size: {
-        sm: ["px-6 py-2.5"],
+        sm: ["px-4.5 py-2.5"],
         md: ["px-6 py-3.5"],
       },
     },

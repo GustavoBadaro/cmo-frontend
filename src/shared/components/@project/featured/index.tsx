@@ -1,5 +1,7 @@
 import { ComponentFeaturedProject } from "@/core/types/strapi";
 import { Specifications } from "@/shared/components/specifications";
+import { Bed } from "@/shared/icons/bed";
+import { Ruler } from "@/shared/icons/ruler";
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 import Image from "next/image";
@@ -28,12 +30,22 @@ export function FeaturedProject({ data }: Props) {
             {data.title}
           </h2>
 
-          {data.description && <p>{data.description}</p>}
+          {data.description && (
+            <p className="max-w-[440px] text-xl tracking-wide opacity-60">
+              {data.description}
+            </p>
+          )}
 
           <Specifications
             items={[
-              { icon: undefined, text: "65 - 180m²" },
-              { icon: undefined, text: "2Q - 3Q" },
+              {
+                icon: <Ruler color="black" className="opacity-40" />,
+                text: "65 - 180m²",
+              },
+              {
+                icon: <Bed color="black" className="opacity-40" />,
+                text: "2Q - 3Q",
+              },
             ]}
           />
 

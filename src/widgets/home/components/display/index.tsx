@@ -3,7 +3,7 @@ import {
   ComponentSimpleCTA,
 } from "@/core/types/strapi";
 import { HomeComponents } from "../../services/get-home.dto";
-import { FeaturedProject } from "@/shared/components/featured-project";
+import { FeaturedProject } from "@/shared/components/@project/featured";
 import { SimpleCTA } from "@/shared/components/simple-cta";
 
 interface Props {

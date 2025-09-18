@@ -1,5 +1,8 @@
 import { cx } from "class-variance-authority";
 import { InputContactForm } from "./input";
+import { UserCicle } from "@/shared/icons";
+import { Phone } from "@/shared/icons/phone";
+import { Mail } from "@/shared/icons/mail";
 
 export function FormContactForm() {
   return (
@@ -9,9 +12,9 @@ export function FormContactForm() {
         "max-md:w-full max-md:py-6 max-md:flex-col max-md:rounded-4xl",
       ])}
     >
-      <InputContactForm placeholder="Nome" />
-      <InputContactForm placeholder="Celular" />
-      <InputContactForm placeholder="E-mail" />
+      <InputContactForm placeholder="Nome" icon={<UserCicle />} />
+      <InputContactForm placeholder="Celular" icon={<Phone />} />
+      <InputContactForm placeholder="E-mail" icon={<Mail />} />
       <button
         type="submit"
         className={cx([

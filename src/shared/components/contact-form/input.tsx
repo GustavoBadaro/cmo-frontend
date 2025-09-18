@@ -8,7 +8,9 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 export function InputContactForm({ icon, ...props }: Props) {
   return (
     <label className="relative">
-      {icon && <span>{icon}</span>}
+      {icon && (
+        <span className="absolute top-1/2 -translate-1/2 left-7">{icon}</span>
+      )}
       <input
         type="text"
         {...props}
@@ -16,7 +18,7 @@ export function InputContactForm({ icon, ...props }: Props) {
           "flex-1 w-full p-4 border-2 border-[#AEAEB71A] bg-white/10",
           "flex gap-3 rounded-full text-sm text-white",
           "max-md:py-3 max-md:rounded-2xl",
-          icon && "pl-8",
+          icon && "pl-12",
         ])}
       />
     </label>

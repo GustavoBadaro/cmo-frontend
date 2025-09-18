@@ -16,12 +16,12 @@ export function CheckboxHeroHome({ label, icon, ...props }: Props) {
         className={cx([
           "w-full flex justify-start items-center gap-2 px-4 py-2",
           "rounded-full border border-neutral-300 bg-white",
-          "transition-colors hover:text-[#00375A]",
+          "transition-colors text-neutral-500 hover:text-[#00375A]",
           "peer-checked:bg-[#F2F6FF] peer-checked:text-[#00375A]",
         ])}
       >
         {icon && <span>{icon}</span>}
-        <strong className="text-sm font-medium text-neutral-500">
+        <strong className="text-sm font-medium text-inherit whitespace-nowrap">
           {label}
         </strong>
       </div>
