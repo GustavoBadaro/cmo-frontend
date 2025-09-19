@@ -9,7 +9,7 @@ interface Props {
   className?: string;
 }
 
-export function Specifications({ items, className }: Props) {
+export function VariationsProject({ items, className }: Props) {
   return (
     <div className={cx(["flex items-center py-2", className])}>
       {items.map((item, index) => (

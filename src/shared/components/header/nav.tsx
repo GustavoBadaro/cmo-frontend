@@ -1,18 +1,15 @@
 "use client";
 
+import { HeaderLink } from "@/shared/services/header/get-header.dto";
 import { cx } from "class-variance-authority";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const links = [
-  { label: "Ínicio", url: "/" },
-  { label: "Empreendimentos", url: "/empreendimentos" },
-  { label: "Institucional", url: "/institucional" },
-  { label: "Blog", url: "/blog" },
-  { label: "Contato", url: "/contato" },
-];
+interface Props {
+  links: HeaderLink[];
+}
 
-export function NavigationHeader() {
+export function NavigationHeader({ links }: Props) {
   const pathname = usePathname();
 
   return (
@@ -24,6 +21,7 @@ export function NavigationHeader() {
           <Link
             key={item.url}
             href={item.url}
+            target={item.target}
             className={cx(
               "font-semibold text-sm text-center tracking-wide transition-colors",
               "px-4 py-6.5 relative before:content-[''] before:w-1/2 before:h-1 ",

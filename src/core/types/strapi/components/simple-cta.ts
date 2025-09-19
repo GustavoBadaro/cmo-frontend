@@ -4,6 +4,6 @@ export interface ComponentSimpleCTA {
   __component: "components.simple-cta";
   id: number;
   title: string;
-  description: string;
+  description?: string;
   button: ComponentButton;
 }

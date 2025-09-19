@@ -5,24 +5,27 @@ import qs from "qs";
 
 export async function getHome() {
   try {
-    const query = qs.stringify(
-      {
-        populate: {
-          image_main: true,
-          components: {
-            on: {
-              "components.simple-cta": {
-                populate: ["button"],
-              },
-              "components.featured-project": {
-                populate: ["button", "image"],
-              },
+    const query = qs.stringify({
+      populate: {
+        image_main: true,
+        components: {
+          on: {
+            "components.simple-cta": {
+              populate: ["button"],
+            },
+            "components.image-cta": {
+              populate: ["icon", "button", "image"],
+            },
+            "components.featured-project": {
+              populate: ["button", "image", "variations"],
+            },
+            "components.carousel-projects": {
+              populate: ["projects"],
             },
           },
         },
       },
-      { encode: false }
-    );
+    });
 
     const response = await fetcher<GetHomeDto>(`/home?${query}`);
 

@@ -4,38 +4,52 @@ import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
 import { CardProject } from "../card";
 
 import "@splidejs/react-splide/css";
+import { cx } from "class-variance-authority";
+import { ChevronLeft } from "@/shared/icons/chevron-left";
+import { ChevronRight } from "@/shared/icons/chevron-right";
+
+interface Props {
+  title: string;
+}
 
 const options = {
   autoWidth: true,
   arrows: false,
   gap: 16,
+  pagination: false,
 };
 
-export function SplideCarouselProjects() {
+const styleButton = cx([
+  "w-10 h-10 centralize bg-brand-blue rounded-full text-white",
+  "hover:bg-secondary-400",
+]);
+
+export function SplideCarouselProjects({ title }: Props) {
   return (
     <>
       <div className="layout mb-8 flex items-center justify-between">
-        <h2 className="text-2xl font-semibold">
-          Confira nossos empreendimentos
-        </h2>
+        <h2 className="text-2xl font-semibold">{title}</h2>
+
+        <div className="flex gap-2">
+          <button type="button" className={cx(["pr-0.5", styleButton])}>
+            <ChevronLeft />
+          </button>
+
+          <button type="button" className={cx(["pl-0.5", styleButton])}>
+            <ChevronRight />
+          </button>
+        </div>
       </div>
       <Splide hasTrack={false} options={options}>
         <SplideTrack>
-          <SplideSlide className="first:pl-[calc((100vw-1280px-16px)/2)]">
-            <CardProject />
-          </SplideSlide>
-          <SplideSlide>
-            <CardProject />
-          </SplideSlide>
-          <SplideSlide>
-            <CardProject />
-          </SplideSlide>
-          <SplideSlide>
-            <CardProject />
-          </SplideSlide>
-          <SplideSlide>
-            <CardProject />
-          </SplideSlide>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <SplideSlide
+              key={i}
+              className="first:pl-[calc((100vw-1280px-16px)/2)]"
+            >
+              <CardProject />
+            </SplideSlide>
+          ))}
         </SplideTrack>
       </Splide>
     </>

@@ -1,10 +1,19 @@
-import { StrapiFile } from "@/core/types/strapi";
+import {
+  ComponentCarouselProjects,
+  ComponentImageCTA,
+  StrapiFile,
+} from "@/core/types/strapi";
 import {
   ComponentFeaturedProject,
   ComponentSimpleCTA,
 } from "@/core/types/strapi";
 
-export type HomeComponents = [ComponentSimpleCTA | ComponentFeaturedProject];
+export type HomeComponents = [
+  | ComponentSimpleCTA
+  | ComponentImageCTA
+  | ComponentFeaturedProject
+  | ComponentCarouselProjects
+];
 
 export interface GetHomeDto {
   data: {

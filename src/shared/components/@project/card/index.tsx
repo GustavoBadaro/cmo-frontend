@@ -1,7 +1,7 @@
 "use client";
 
 import { cx } from "class-variance-authority";
-import { Specifications } from "../../specifications";
+import { VariationsProject } from "../variations";
 import { Ruler } from "@/shared/icons/ruler";
 import { Bed } from "@/shared/icons/bed";
 import { CategoryProject } from "../category";
@@ -30,7 +30,7 @@ export function CardProject({ className }: Props) {
         <span className="text-sm opacity-60">Setor Bueno</span>
       </div>
 
-      <Specifications
+      <VariationsProject
         items={[
           {
             icon: <Ruler color="black" className="opacity-40" />,
