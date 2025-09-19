@@ -10,8 +10,19 @@ interface Props {
 export function HeroHome({ image }: Props) {
   return (
     <section className="bg-neutral-200 relative overflow-hidden">
-      <div className={cx(["layout  h-[60vh] max-h-[620px] flex items-center"])}>
-        <figure className="w-full h-full absolute inset-0 z-0" aria-hidden>
+      <div
+        className={cx([
+          "layout h-[60vh] max-h-[620px] flex items-center",
+          "max-md:max-h-none max-md:h-fit max-md:px-0 max-md:flex-col",
+        ])}
+      >
+        <figure
+          className={cx([
+            "w-full h-full absolute inset-0 z-0",
+            "max-md:relative max-md:aspect-video",
+          ])}
+          aria-hidden
+        >
           <Image
             src={image.url}
             alt=""
@@ -27,12 +38,14 @@ export function HeroHome({ image }: Props) {
         </figure>
         <div
           className={cx(
-            "max-w-[600px] w-full p-8 rounded-2xl bg-white relative"
+            "max-w-[600px] w-full py-8 rounded-2xl bg-white relative",
+            "max-md:rounded-none"
           )}
         >
-          <h1 className={cx(["text-2xl tracking-wide font-semibold"])}>
+          <h1 className={cx(["px-8 text-2xl tracking-wide font-semibold"])}>
             Que tipo de imóvel você busca?
           </h1>
+
           <FormHeroHome />
         </div>
       </div>

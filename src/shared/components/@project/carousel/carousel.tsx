@@ -28,9 +28,9 @@ export function SplideCarouselProjects({ title }: Props) {
   return (
     <>
       <div className="layout mb-8 flex items-center justify-between">
-        <h2 className="text-2xl font-semibold">{title}</h2>
+        <h2 className="text-2xl font-semibold max-md:w-[80%]">{title}</h2>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 max-md:hidden">
           <button type="button" className={cx(["pr-0.5", styleButton])}>
             <ChevronLeft />
           </button>

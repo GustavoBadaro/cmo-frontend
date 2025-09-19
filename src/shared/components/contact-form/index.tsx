@@ -7,8 +7,8 @@ export function ContactForm() {
       <div className="layout centralize flex-col gap-6">
         <h2
           className={cx([
-            "text-2xl text-center text-black font-medium",
-            "leading-[1.2] tracking-wide",
+            "text-2xl text-center text-black font-medium leading-[1.2]",
+            " tracking-wide max-md:text-left max-md:text-[22px]",
           ])}
         >
           Nossos consultores estão prontos para te ajudar a{" "}
