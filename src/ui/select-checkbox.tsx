@@ -1,7 +1,7 @@
 "use client";
 
 import { useOutsideClick } from "@/core/hooks/outside-click";
-import { ChevronBottom } from "@/shared/icons/chevron-bottom";
+import { ChevronBottom } from "@/shared/icons";
 import { cva, cx, VariantProps } from "class-variance-authority";
 import { HTMLAttributes, ReactNode, useState } from "react";
 

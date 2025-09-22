@@ -2,8 +2,7 @@
 
 import { cx } from "class-variance-authority";
 import { VariationsProject } from "../variations";
-import { Ruler } from "@/shared/icons/ruler";
-import { Bed } from "@/shared/icons/bed";
+import { Bed, Ruler } from "@/shared/icons";
 import { CategoryProject } from "../category";
 
 interface Props {
@@ -15,7 +14,7 @@ export function CardProject({ className }: Props) {
     <div className={cx(["max-w-[295px] w-full", className])}>
       <figure
         className={cx([
-          "w-full aspect-[1/0.85] relative overflow-hidden rounded-xl",
+          "w-[295px] aspect-[1/0.85] relative overflow-hidden rounded-xl",
           "bg-neutral-200",
         ])}
       >

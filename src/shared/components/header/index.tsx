@@ -1,11 +1,12 @@
+import { getHeader } from "@/shared/services/header/get-header";
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 import { NavigationHeader } from "./nav";
-import Link from "next/link";
-import { Lock, UserCicle } from "@/shared/icons";
-import { getHeader } from "@/shared/services/header/get-header";
-import Image from "next/image";
 import { MobileHeader } from "./mobile";
+import { Lock, UserCicle } from "@/shared/icons";
+
+import Link from "next/link";
+import Image from "next/image";
 
 export async function Header() {
   const header = await getHeader();

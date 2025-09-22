@@ -1,8 +1,6 @@
 import { cx } from "class-variance-authority";
 import { InputContactForm } from "./input";
-import { UserCicle } from "@/shared/icons";
-import { Phone } from "@/shared/icons/phone";
-import { Mail } from "@/shared/icons/mail";
+import { Mail, Phone, UserCicle } from "@/shared/icons";
 
 export function FormContactForm() {
   return (

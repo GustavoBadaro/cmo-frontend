@@ -2,6 +2,7 @@ import { GetHeaderDto } from "@/shared/services/header/get-header.dto";
 import { cx } from "class-variance-authority";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu } from "@/shared/icons";
 
 interface Props {
   header?: GetHeaderDto;
@@ -11,7 +12,9 @@ export async function MobileHeader({ header }: Props) {
   return (
     <header className={cx(["w-full py-4 bg-white hidden max-lg:flex"])}>
       <div className="layout flex items-center justify-between">
-        <button type="button">MENU</button>
+        <button type="button">
+          <Menu color="black" />
+        </button>
 
         <Link href="/">
           {header?.data.logo && (

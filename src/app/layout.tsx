@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { outfit } from "@/core/fonts";
 import { Header } from "@/shared/components/header";
+import { Footer } from "@/shared/components/footer";
 
 import "../core/styles/globals.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

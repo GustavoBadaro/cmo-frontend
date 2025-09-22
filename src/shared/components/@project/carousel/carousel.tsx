@@ -2,11 +2,10 @@
 
 import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
 import { CardProject } from "../card";
+import { cx } from "class-variance-authority";
+import { ChevronLeft, ChevronRight } from "@/shared/icons";
 
 import "@splidejs/react-splide/css";
-import { cx } from "class-variance-authority";
-import { ChevronLeft } from "@/shared/icons/chevron-left";
-import { ChevronRight } from "@/shared/icons/chevron-right";
 
 interface Props {
   title: string;

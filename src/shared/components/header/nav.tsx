@@ -1,12 +1,12 @@
 "use client";
 
-import { HeaderLink } from "@/shared/services/header/get-header.dto";
+import { ComponentMenuLink } from "@/core/types/strapi";
 import { cx } from "class-variance-authority";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface Props {
-  links: HeaderLink[];
+  links: ComponentMenuLink[];
 }
 
 export function NavigationHeader({ links }: Props) {

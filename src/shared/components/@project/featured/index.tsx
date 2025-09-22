@@ -1,7 +1,6 @@
 import { ComponentFeaturedProject } from "@/core/types/strapi";
 import { VariationsProject } from "@/shared/components/@project/variations";
-import { Bed } from "@/shared/icons/bed";
-import { Ruler } from "@/shared/icons/ruler";
+import { Bed, Ruler } from "@/shared/icons";
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 import Image from "next/image";

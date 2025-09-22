@@ -3,12 +3,8 @@
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 import { CheckboxHeroHome } from "./checkbox";
-import { Home, Star, Work } from "@/shared/icons";
 import { SelectCheckbox } from "@/ui/select-checkbox";
-import { Locale } from "@/shared/icons/locale";
-import { Dolar } from "@/shared/icons/dolar";
-import { Ruler } from "@/shared/icons/ruler";
-import { Bed } from "@/shared/icons/bed";
+import { Bed, Dolar, Home, Locale, Ruler, Star, Work } from "@/shared/icons";
 
 export function FormHeroHome() {
   return (

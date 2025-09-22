@@ -4,3 +4,4 @@ export * from "./components/carousel-projects";
 export * from "./components/featured-project";
 export * from "./components/image-cta";
 export * from "./components/simple-cta";
+export * from "./components/menu-link";

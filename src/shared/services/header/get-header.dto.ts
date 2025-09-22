@@ -1,10 +1,5 @@
 import { StrapiFile } from "@/core/types/strapi";
-
-export interface HeaderLink {
-  label: string;
-  target: string;
-  url: string;
-}
+import { ComponentMenuLink } from "@/core/types/strapi";
 
 export interface GetHeaderDto {
   data: {
@@ -14,6 +9,6 @@ export interface GetHeaderDto {
     updatedAt: string;
     publishedAt: string;
     logo: StrapiFile;
-    links: HeaderLink[];
+    links: ComponentMenuLink[];
   };
 }
