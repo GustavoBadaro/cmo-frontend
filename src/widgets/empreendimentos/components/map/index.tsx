@@ -1,4 +1,5 @@
 import { Button } from "@/ui/button";
+import { cx } from "class-variance-authority";
 
 export function MapProjects() {
   return (
@@ -6,7 +7,14 @@ export function MapProjects() {
       <figure className="centralize w-full h-full bg-neutral-200">
         Google Maps
       </figure>
-      <Button className="bg-white !text-brand-blue absolute bottom-6 right-6">
+      <Button
+        className={cx([
+          "!text-brand-blue bg-white absolute bottom-6",
+          "min-[1600px]:right-[calc((100vw-1280px)/2)]",
+          "right-[calc((100vw-1280px+2.5rem)/2)]",
+          "max-xl:right-10 max-lg:right-6",
+        ])}
+      >
         Ampliar mapa
       </Button>
     </section>

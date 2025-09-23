@@ -3,7 +3,7 @@ import { DisplayHome } from "@/widgets/home/components/display";
 import { HeroHome } from "@/widgets/home/components/hero";
 import { getHome } from "@/widgets/home/services/get-home";
 
-export default async function Home() {
+export default async function HomePage() {
   const home = await getHome();
 
   if (!home) {

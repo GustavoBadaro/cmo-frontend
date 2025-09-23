@@ -1,6 +1,7 @@
 "use client";
 
 import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
+import { StrapiProject } from "@/core/types/strapi";
 import { SplideArrowsProjects } from "./arrows";
 import { CardProject } from "../card";
 import { useRef } from "react";
@@ -10,6 +11,7 @@ import "@splidejs/react-splide/css";
 
 interface Props {
   title: string;
+  data: StrapiProject[];
 }
 
 const options = {
@@ -19,7 +21,7 @@ const options = {
   pagination: false,
 };
 
-export function SplideCarouselProjects({ title }: Props) {
+export function SplideCarouselProjects({ title, data }: Props) {
   const splide = useRef<any>(null);
 
   const controller = (direction: "prev" | "next") => {
@@ -47,15 +49,20 @@ export function SplideCarouselProjects({ title }: Props) {
       </div>
       <Splide ref={splide} hasTrack={false} options={options}>
         <SplideTrack>
-          {Array.from({ length: 12 }).map((_, i) => (
+          {data.map((item) => (
             <SplideSlide
-              key={i}
+              key={item.id}
               className={cx([
-                "first:pl-[calc((100vw-1280px-16px)/2)] flex",
-                "last:pr-[calc((100vw-1280px-16px)/2)]",
+                "flex",
+                "min-[1600px]:first:pl-[calc((100vw-1280px-1rem)/2)]",
+                "min-[1600px]:last:pr-[calc((100vw-1280px-1rem)/2)]",
+                "first:pl-[calc((100vw-1280px+5rem)/2)]",
+                "last:pr-[calc((100vw-1280px+5rem)/2)]",
+                "max-xl:first:pl-10 max-xl:last:pr-10",
+                "max-lg:first:pl-6 max-lg:last:pr-6",
               ])}
             >
-              <CardProject />
+              <CardProject data={item} />
             </SplideSlide>
           ))}
         </SplideTrack>

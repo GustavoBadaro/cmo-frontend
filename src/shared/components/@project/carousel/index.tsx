@@ -8,7 +8,7 @@ interface Props {
 export function CarouselProjects({ data }: Props) {
   return (
     <section className="w-full py-10">
-      <SplideCarouselProjects title={"Confira nossos empreendimentos"} />
+      <SplideCarouselProjects title={data.title} data={data.projects} />
     </section>
   );
 }

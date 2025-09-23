@@ -1,12 +1,13 @@
 import { cx } from "class-variance-authority";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
-export function CategoryProject({ className, children }: Props) {
+export function CategoryProject({ className, children, style }: Props) {
   return (
     <div
       className={cx([
@@ -14,6 +15,7 @@ export function CategoryProject({ className, children }: Props) {
         "bg-neutral-100 rounded-lg leading-none",
         className,
       ])}
+      style={style}
     >
       {children}
     </div>

@@ -20,7 +20,18 @@ export async function getHome() {
               populate: ["button", "image", "variations"],
             },
             "components.carousel-projects": {
-              populate: ["projects"],
+              populate: {
+                projects: {
+                  populate: {
+                    categories: true,
+                    thumbnail: true,
+                    variations: true,
+                    gallery: {
+                      populate: ["image"],
+                    },
+                  },
+                },
+              },
             },
           },
         },
