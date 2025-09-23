@@ -1,4 +1,4 @@
-import { Expand } from "@/shared/icons/expand";
+import { Expand } from "@/shared/icons";
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 

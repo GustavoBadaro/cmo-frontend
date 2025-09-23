@@ -9,7 +9,7 @@ interface Props {
 
 export function HeroHome({ image }: Props) {
   return (
-    <section className="bg-white relative overflow-hidden">
+    <section className="bg-white relative">
       <div
         className={cx([
           "layout h-[60vh] max-h-[620px] flex items-center",

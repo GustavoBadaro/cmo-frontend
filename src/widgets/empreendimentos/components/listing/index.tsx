@@ -1,6 +1,6 @@
 import { StrapiMeta, StrapiProject } from "@/core/types/strapi";
 import { CardProject } from "@/shared/components/@project/card";
-import { SelectCheckbox } from "@/ui/select-checkbox";
+import { Multiselect } from "@/ui/multiselect";
 
 interface Props {
   data: StrapiProject[];
@@ -16,8 +16,8 @@ export function ListingProjects({ data, meta }: Props) {
             {meta.pagination.total} empreendimentos
           </h2>
 
-          <SelectCheckbox
-            placeholder="Ordenar por"
+          <Multiselect
+            label="Ordenar por"
             variant="rounded"
             className="w-full"
             options={[
