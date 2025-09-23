@@ -19,7 +19,7 @@ export function FeaturedProject({ data }: Props) {
           "max-lg:flex-col-reverse max-lg:gap-10 max-lg:px-6",
         ])}
       >
-        <div className="flex flex-col gap-6 max-lg:gap-4">
+        <div className="flex flex-col gap-6 max-lg:gap-4 max-lg:pr-20">
           <h2
             className={cx([
               "text-[2.5rem] leading-[1.2] font-semibold tracking-wide",
@@ -30,7 +30,7 @@ export function FeaturedProject({ data }: Props) {
           </h2>
 
           {data.description && (
-            <p className="max-w-[440px] text-xl tracking-wide opacity-60">
+            <p className="max-w-[440px] text-xl tracking-wide opacity-60 max-lg:text-base">
               {data.description}
             </p>
           )}

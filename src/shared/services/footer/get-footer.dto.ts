@@ -16,6 +16,7 @@ export interface GetFooterDto {
       phone?: string;
     };
     group_links?: Array<{
+      id: number;
       name: string;
       links: ComponentMenuLink[];
     }>;

@@ -67,7 +67,11 @@ export function FormHeroHome() {
       </div>
 
       <div className="px-8">
-        <Button type="submit" variant="secondary" className="max-md:w-full">
+        <Button
+          type="submit"
+          variant="secondary"
+          className="max-md:w-full max-md:bg-brand-blue"
+        >
           Buscar
         </Button>
       </div>

@@ -2,6 +2,7 @@
 
 import { cx } from "class-variance-authority";
 import { ChevronLeft, ChevronRight } from "@/shared/icons";
+import { memo } from "react";
 
 interface Props {
   controller: (direction: "prev" | "next") => void;
@@ -12,7 +13,7 @@ const styleButton = cx([
   "hover:bg-secondary-400",
 ]);
 
-export function SplideArrowsProjects({ controller }: Props) {
+function Component({ controller }: Props) {
   return (
     <div className="flex gap-2 max-md:hidden">
       <button
@@ -33,3 +34,5 @@ export function SplideArrowsProjects({ controller }: Props) {
     </div>
   );
 }
+
+export const SplideArrowsProjects = memo(Component)

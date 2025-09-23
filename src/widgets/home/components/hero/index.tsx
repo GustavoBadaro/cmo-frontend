@@ -9,7 +9,7 @@ interface Props {
 
 export function HeroHome({ image }: Props) {
   return (
-    <section className="bg-neutral-200 relative overflow-hidden">
+    <section className="bg-white relative overflow-hidden">
       <div
         className={cx([
           "layout h-[60vh] max-h-[620px] flex items-center",
@@ -39,7 +39,7 @@ export function HeroHome({ image }: Props) {
         <div
           className={cx(
             "max-w-[600px] w-full py-8 rounded-2xl bg-white relative",
-            "max-md:rounded-none"
+            "max-md:max-w-none max-md:rounded-none"
           )}
         >
           <h1 className={cx(["px-8 text-2xl tracking-wide font-semibold"])}>

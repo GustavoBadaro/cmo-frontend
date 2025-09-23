@@ -36,7 +36,7 @@ export async function ContactFooter({ data }: Props) {
           aria-disabled={!!data.address?.url_google}
         >
           {data.address.content.split("\n").map((line, i) => (
-            <p key={i} className="text-inherit">
+            <p key={i} className="text-inherit whitespace-nowrap">
               {line}
             </p>
           ))}

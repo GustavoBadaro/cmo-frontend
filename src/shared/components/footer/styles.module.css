@@ -1,0 +1,7 @@
+.listing-links li a path {
+  transition: fill 150ms;
+}
+
+.listing-links li a:hover path {
+  fill: #f58220;
+}

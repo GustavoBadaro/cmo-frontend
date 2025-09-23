@@ -1,9 +1,13 @@
+"use client";
+
 import { cx } from "class-variance-authority";
 import { VariationsProject } from "../variations";
 import { Bed, Ruler } from "@/shared/icons";
 import { CategoryProject } from "../category";
 import { StrapiFile, StrapiProject } from "@/core/types/strapi";
 import { CarouselCardProject } from "./carousel";
+import Link from "next/link";
+import { useState } from "react";
 
 interface Props {
   data: StrapiProject;
@@ -11,6 +15,8 @@ interface Props {
 }
 
 export function CardProject({ data, className }: Props) {
+  const [onHover, setHover] = useState(false);
+
   const getImages = (): StrapiFile[] => {
     const images: StrapiFile[] = [];
 
@@ -29,14 +35,23 @@ export function CardProject({ data, className }: Props) {
   };
 
   return (
-    <div className={cx(["max-w-[295px] w-full", className])}>
+    <div
+      className={cx(["max-w-[295px] w-full", className])}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <figure
         className={cx([
           "w-[295px] aspect-[1/0.85] relative overflow-hidden rounded-xl",
           "bg-neutral-200",
         ])}
       >
-        <CarouselCardProject images={getImages()} />
+        <CarouselCardProject
+          slug={data.slug}
+          images={getImages()}
+          onHover={onHover}
+        />
+
         <div className="absolute top-2.5 left-2.5 flex">
           {data.categories?.map((item, index) => {
             // Exbir apenas duas categorias
@@ -57,23 +72,25 @@ export function CardProject({ data, className }: Props) {
         </div>
       </figure>
 
-      <div className="flex flex-col gap-1.5">
-        <strong className="font-medium tracking-wide">{data.name}</strong>
-        <span className="text-sm opacity-60">Setor</span>
-      </div>
+      <Link href={`/empreendimentos/${data.slug}`} className="block mt-2">
+        <div className="flex flex-col gap-1.5">
+          <strong className="font-medium tracking-wide">{data.name}</strong>
+          <span className="text-sm opacity-60">Setor</span>
+        </div>
 
-      <VariationsProject
-        items={[
-          {
-            icon: <Ruler color="black" className="opacity-40" />,
-            text: data.variations.sizes,
-          },
-          {
-            icon: <Bed color="black" className="opacity-40" />,
-            text: data.variations.bedrooms,
-          },
-        ]}
-      />
+        <VariationsProject
+          items={[
+            {
+              icon: <Ruler color="black" className="opacity-40" />,
+              text: data.variations.sizes,
+            },
+            {
+              icon: <Bed color="black" className="opacity-40" />,
+              text: data.variations.bedrooms,
+            },
+          ]}
+        />
+      </Link>
     </div>
   );
 }

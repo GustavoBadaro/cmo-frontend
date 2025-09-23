@@ -19,7 +19,7 @@ export function DisplayHome({ components }: Props) {
     if (item.__component === "components.carousel-projects") {
       return (
         <CarouselProjects
-          key={item.id}
+          key={`${item.__component}-${item.id}`}
           data={item as ComponentCarouselProjects}
         />
       );
@@ -28,18 +28,28 @@ export function DisplayHome({ components }: Props) {
     if (item.__component === "components.featured-project") {
       return (
         <FeaturedProject
-          key={item.id}
+          key={`${item.__component}-${item.id}`}
           data={item as ComponentFeaturedProject}
         />
       );
     }
 
     if (item.__component === "components.simple-cta") {
-      return <SimpleCTA key={item.id} data={item as ComponentSimpleCTA} />;
+      return (
+        <SimpleCTA
+          key={`${item.__component}-${item.id}`}
+          data={item as ComponentSimpleCTA}
+        />
+      );
     }
 
     if (item.__component === "components.image-cta") {
-      return <ImageCTA key={item.id} data={item as ComponentImageCTA} />;
+      return (
+        <ImageCTA
+          key={`${item.__component}-${item.id}`}
+          data={item as ComponentImageCTA}
+        />
+      );
     }
 
     return null;

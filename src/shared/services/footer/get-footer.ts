@@ -8,10 +8,12 @@ export async function getFooter() {
     const query = qs.stringify({
       populate: {
         logo: true,
-        group_links: true,
         links_policy: true,
         social_media: true,
         law: true,
+        group_links: {
+          populate: ["links"],
+        },
         contact: {
           populate: ["address"],
         },

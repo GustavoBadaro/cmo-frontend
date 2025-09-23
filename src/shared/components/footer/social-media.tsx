@@ -1,5 +1,7 @@
 import { Facebook, Instagram, Youtube } from "@/shared/icons";
+import { cx } from "class-variance-authority";
 import Link from "next/link";
+import styles from "./styles.module.css";
 
 interface Props {
   data: {
@@ -21,7 +23,7 @@ export async function SocialMediaFooter({ data }: Props) {
       <strong className="font-medium text-xs text-[#E4E2DD]">
         Acompanhe a CMO
       </strong>
-      <ul className="flex items-center gap-4">
+      <ul className={cx(["flex items-center gap-4", styles["listing-links"]])}>
         {socialMedia.map((item) => (
           <li key={item.title}>
             <Link

@@ -16,7 +16,7 @@ export function ImageCTA({ data }: Props) {
           "max-lg:flex-col-reverse max-lg:gap-12 max-lg:px-6",
         ])}
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 max-lg:pr-20">
           {data.icon && (
             <Image
               src={data.icon.url}
@@ -40,7 +40,7 @@ export function ImageCTA({ data }: Props) {
           </h2>
 
           {data.description && (
-            <p className="max-w-[440px] text-xl tracking-wide opacity-60">
+            <p className="max-w-[440px] text-xl tracking-wide opacity-60 max-lg:text-base">
               {data.description}
             </p>
           )}

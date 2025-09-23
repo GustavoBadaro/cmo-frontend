@@ -6,13 +6,19 @@ import { ContactFooter } from "./contact";
 import Link from "next/link";
 import Image from "next/image";
 import { PoliciesFooter } from "./policies";
+import { GroupMenuFooter } from "./group-menu";
 
 export async function Footer() {
   const footer = await getFooter();
 
   return (
     <footer className={cx(["w-full py-16 bg-brand-blue"])}>
-      <div className="layout flex items-center justify-between">
+      <div
+        className={cx([
+          "layout flex items-start justify-between gap-20",
+          "max-lg:flex-col max-lg:gap-15",
+        ])}
+      >
         <div className="flex flex-col gap-8">
           <Link href="/">
             {footer?.data.logo && (
@@ -35,6 +41,21 @@ export async function Footer() {
           {footer?.data.contact && (
             <ContactFooter data={footer?.data.contact} />
           )}
+        </div>
+
+        <div
+          className={cx([
+            "w-full flex items-start justify-between",
+            "max-md:grid max-md:grid-cols-2 max-md:gap-10",
+          ])}
+        >
+          {footer?.data.group_links?.map((item) => (
+            <GroupMenuFooter
+              key={item.id}
+              title={item.name}
+              links={item.links}
+            />
+          ))}
         </div>
       </div>
 

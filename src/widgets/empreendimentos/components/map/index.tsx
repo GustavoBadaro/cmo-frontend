@@ -1,3 +1,4 @@
+import { Expand } from "@/shared/icons/expand";
 import { Button } from "@/ui/button";
 import { cx } from "class-variance-authority";
 
@@ -8,13 +9,18 @@ export function MapProjects() {
         Google Maps
       </figure>
       <Button
+        size="sm"
         className={cx([
-          "!text-brand-blue bg-white absolute bottom-6",
+          "!text-brand-blue bg-white absolute bottom-6 hover:!text-white",
           "min-[1600px]:right-[calc((100vw-1280px)/2)]",
           "right-[calc((100vw-1280px+2.5rem)/2)]",
-          "max-xl:right-10 max-lg:right-6",
+          "max-xl:right-10 max-lg:right-6 group",
         ])}
       >
+        <Expand
+          color="black"
+          className="transition-all group-hover:stroke-white"
+        />
         Ampliar mapa
       </Button>
     </section>

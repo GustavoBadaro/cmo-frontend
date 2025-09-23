@@ -1,5 +1,5 @@
 import { cx } from "class-variance-authority";
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties, memo, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface Props {
   style?: CSSProperties;
 }
 
-export function CategoryProject({ className, children, style }: Props) {
+function Component({ className, children, style }: Props) {
   return (
     <div
       className={cx([
@@ -21,3 +21,5 @@ export function CategoryProject({ className, children, style }: Props) {
     </div>
   );
 }
+
+export const CategoryProject = memo(Component);

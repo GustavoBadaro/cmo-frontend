@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+.splide__pagination {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.splide__pagination li button {
+  width: 0.375rem;
+  height: 0.375rem;
+  margin: 0;
+
+  opacity: 70%;
+  background-color: white;
+}
+
+.splide__pagination li button.is-active {
+  opacity: 100%;
+}
+
+.splide__arrows button {
+  background-color: white;
+  opacity: 0;
+  pointer-events: none;
+
+  transition-property: opacity, background;
+  transition: 0.2s ease;
+}
+.splide__arrows button svg {
+  width: 40;
+  height: 40;
+}
+
+.splide__arrows button path {
+  fill: none;
+  stroke: #00375a;
+  stroke-width: 2px;
+
+  transition-property: opacity, background;
+  transition: 0.2s ease;
+}
+
+.splide__arrows button:hover {
+  background-color: #ff9d47;
+}
+.splide__arrows button:hover svg path {
+  stroke: white;
+}
+.splide__arrows button:disabled {
+  opacity: 0;
+}
+
+.splide:hover > .splide__arrows button:not(:disabled) {
+  opacity: 1;
+  pointer-events: initial;
+}
