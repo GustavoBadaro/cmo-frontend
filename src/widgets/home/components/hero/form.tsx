@@ -8,7 +8,7 @@ import { Bed, Dolar, Home, Locale, Ruler, Star, Work } from "@/shared/icons";
 
 export function FormHeroHome() {
   return (
-    <form className={cx(["mt-6 flex flex-col gap-6 overflow-hidden"])}>
+    <form className={cx(["mt-6 flex flex-col gap-6 max-md:overflow-x-hidden"])}>
       <div className="px-8 flex items-stretch gap-2 max-md:overflow-auto">
         <CheckboxHeroHome label="Lançamento" icon={<Star />} />
         <CheckboxHeroHome label="Em obras" icon={<Work />} />

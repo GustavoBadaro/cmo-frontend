@@ -1,9 +1,10 @@
 "use client";
 
 import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
+import { SplideArrowsProjects } from "./arrows";
 import { CardProject } from "../card";
+import { useRef } from "react";
 import { cx } from "class-variance-authority";
-import { ChevronLeft, ChevronRight } from "@/shared/icons";
 
 import "@splidejs/react-splide/css";
 
@@ -13,38 +14,46 @@ interface Props {
 
 const options = {
   autoWidth: true,
-  arrows: false,
   gap: 16,
+  arrows: false,
   pagination: false,
 };
 
-const styleButton = cx([
-  "w-10 h-10 centralize bg-brand-blue rounded-full text-white",
-  "hover:bg-secondary-400",
-]);
-
 export function SplideCarouselProjects({ title }: Props) {
+  const splide = useRef<any>(null);
+
+  const controller = (direction: "prev" | "next") => {
+    const splideRef = splide.current?.splide;
+
+    if (splideRef) {
+      const prevIndex = splideRef.Components.Controller.getPrev();
+      const nextIndex = splideRef.Components.Controller.getNext();
+
+      if (direction === "prev") {
+        splideRef.go(prevIndex);
+      }
+
+      if (direction === "next") {
+        splideRef.go(nextIndex);
+      }
+    }
+  };
+
   return (
     <>
       <div className="layout mb-8 flex items-center justify-between">
         <h2 className="text-2xl font-semibold max-md:w-[80%]">{title}</h2>
-
-        <div className="flex gap-2 max-md:hidden">
-          <button type="button" className={cx(["pr-0.5", styleButton])}>
-            <ChevronLeft />
-          </button>
-
-          <button type="button" className={cx(["pl-0.5", styleButton])}>
-            <ChevronRight />
-          </button>
-        </div>
+        <SplideArrowsProjects controller={controller} />
       </div>
-      <Splide hasTrack={false} options={options}>
+      <Splide ref={splide} hasTrack={false} options={options}>
         <SplideTrack>
           {Array.from({ length: 12 }).map((_, i) => (
             <SplideSlide
               key={i}
-              className="first:pl-[calc((100vw-1280px-16px)/2)]"
+              className={cx([
+                "first:pl-[calc((100vw-1280px-16px)/2)] flex",
+                "last:pr-[calc((100vw-1280px-16px)/2)]",
+              ])}
             >
               <CardProject />
             </SplideSlide>

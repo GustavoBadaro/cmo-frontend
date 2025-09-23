@@ -8,7 +8,7 @@ import { HTMLAttributes, ReactNode, useState } from "react";
 interface Props
   extends HTMLAttributes<HTMLElement>,
     VariantProps<typeof selectCheckbox> {
-  icon: ReactNode;
+  icon?: ReactNode;
   className?: string;
   placeholder?: string;
   options: Array<{
@@ -59,10 +59,13 @@ export function SelectCheckbox({
       {/* Button */}
       <button
         type="button"
-        className={selectCheckbox({
-          variant,
-          className,
-        })}
+        className={cx(
+          selectCheckbox({
+            variant,
+            className,
+          }),
+          onChevron && "pr-12"
+        )}
         onClick={() => setOpen(!open)}
       >
         {icon && <span className="centralize">{icon}</span>}

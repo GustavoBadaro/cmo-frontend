@@ -6,9 +6,15 @@ import { Footer } from "@/shared/components/footer";
 import "../core/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "CMO Construtora",
+  title: {
+    default: "CMO Construtora - Goiânia GO",
+    template: "%s | CMO Construtora - Goiânia GO",
+  },
   description:
     "Empreendimentos · Ilumi Bueno Residências · Raízes Parque Cascavel · Residencial Lago Areião · Solar Amazônia · Residencial Floramazônia · Solo Vaca Brava.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
